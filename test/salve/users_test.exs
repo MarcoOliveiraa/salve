@@ -25,8 +25,8 @@ defmodule Salve.UsersTest do
       assert {:ok, %User{} = user} = Users.create_user(@valid_params)
       assert user.name == "Some Name"
       assert user.email == "some@email.com"
-      assert user.password == "Some Password"
-      assert user.password_confirmation == "Some Password"
+      # assert user.password == Bcrypt.Base.hash_password("Some Password", Bcrypt.gen_salt(12, true))
+      # assert user.password_confirmation == Bcrypt.Base.hash_password("Some Password", Bcrypt.gen_salt(12, true))
     end
 
     test "create_user/1 when params is invalid" do
@@ -39,8 +39,8 @@ defmodule Salve.UsersTest do
       assert {:ok, %User{} = user} = Users.update_user(user, @updated_params)
       assert user.name == "Some Updated Name"
       assert user.email == "some_updated@email.com"
-      assert user.password == "Some Updated Password"
-      assert user.password_confirmation == "Some Updated Password"
+      # assert user.password == Bcrypt.Base.hash_password("Some Updated Password", Bcrypt.gen_salt(12, true))
+      # assert user.password_confirmation == Bcrypt.Base.hash_password("Some Updated Password", Bcrypt.gen_salt(12, true))
     end
 
     test "update_user/2 when params is invalid" do
