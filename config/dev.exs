@@ -2,8 +2,8 @@ use Mix.Config
 
 # Configure your database
 config :salve, Salve.Repo,
-  username: "postgres",
-  password: "postgres",
+  username: "dev",
+  password: "qwerty123",
   database: "salve_dev",
   hostname: "localhost",
   show_sensitive_data_on_connection_error: true,
