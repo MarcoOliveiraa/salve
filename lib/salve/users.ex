@@ -1,6 +1,7 @@
 defmodule Salve.Users do
   alias Salve.Users.User
   alias Salve.Repo
+  alias Bcrypt
 
   def create_user(%{} = attrs) do
     %User{}
@@ -18,6 +19,9 @@ defmodule Salve.Users do
     Repo.delete(user)
   end
 
+  def change_user(%User{} = user) do
+    User.changeset(user, %{})
+  end
 
   def get_user!(id), do: Repo.get!(User, id)
 end
