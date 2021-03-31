@@ -1,9 +1,9 @@
 defmodule Salve.Users.User do
   use Ecto.Schema
 
-  import Ecto.Changeset
-
   alias Argon2
+
+  import Ecto.Changeset
 
   @required_params [:name, :email, :password, :password_confirmation]
 
