@@ -10,5 +10,7 @@ defmodule Salve.Repo.Migrations.AddUserTable do
 
       timestamps()
     end
+
+    create unique_index(:users, [:email])
   end
 end
